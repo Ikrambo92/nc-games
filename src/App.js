@@ -1,13 +1,21 @@
 import "./App.css";
 import Header from "./Components/Header";
-import Content from "./Components/Content";
+import ReviewsList from "./Components/ReviewsList";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
+  
+
   return (
-    <div className="App">
-      <Header />
-      <Content />
-    </div>
+      <Router>
+        <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<ReviewsList />} />
+          
+        </Routes>
+        </div>
+      </Router>
   );
 }
 
