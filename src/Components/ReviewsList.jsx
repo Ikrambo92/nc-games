@@ -1,12 +1,14 @@
 import { fetchReviews } from "../API"
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 
 const ReviewsList = () => {
 
     const [reviews, setReviews] = useState([])
+    const { category } = useParams()
 
     useEffect(() => {
-        fetchReviews().then((res) => {
+        fetchReviews(category).then((res) => {
             setReviews(res)
         })
     }, [])
@@ -21,6 +23,7 @@ const ReviewsList = () => {
                             return <li key={review.review_id}>
                                 <h3>{review.title}</h3>
                                 <p>{'Votes: ' + review.votes}</p>
+                                <p>{'Category: ' + review.category}</p>
                                 <br />
                             </li>
                         }

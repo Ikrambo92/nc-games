@@ -1,5 +1,6 @@
 import { fetchCategories } from "../API";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const CategoriesList = () => {
     const [categories, setCategories] = useState([]);
@@ -19,7 +20,9 @@ const CategoriesList = () => {
                         {categories.map((category) => {
                             return (
                                 <li key={category.slug}>
-                                    <h3>{category.slug}</h3>
+                                    <Link to={`/reviews/categories/${category.slug}`}>
+                                        <h3>{category.slug}</h3>
+                                    </Link>
                                     <p>{category.description}</p>
                                     <br />
                                 </li>

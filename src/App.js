@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ReviewsList />} />
           <Route path="/categories" element={<CategoriesList />} />
+          <Route path="/reviews/categories/:category" element={<ReviewsList />} />
         </Routes>
       </div>
     </Router>
@@ -19,5 +20,3 @@ function App() {
 }
 
 export default App;
-
-

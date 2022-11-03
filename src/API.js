@@ -4,8 +4,8 @@ const apiUrl = axios.create({
     baseURL: "https://ikrams-first-app.herokuapp.com/api",
 });
 
-export const fetchReviews = () => {
-    return apiUrl.get("/reviews").then((res) => {
+export const fetchReviews = (category) => {
+    return apiUrl.get("/reviews", {params: {category}}).then((res) => {
         return res.data.reviews;
     });
 };
