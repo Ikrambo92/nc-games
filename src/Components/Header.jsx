@@ -7,14 +7,15 @@ const header = () => {
         <div className="header">
             <h1>NC Games</h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/account">Account</a>
-                <a href="/reviews">Reviews</a>
-                <a href="/categories">Categories</a>
-                <Link to="/comment">Comment</Link>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/account">Account</a></li>
+                    <li><Link to="/categories">Categories</Link></li>
+                </ul>
             </nav>
         </div>
     )
 }
 
 export default header
+

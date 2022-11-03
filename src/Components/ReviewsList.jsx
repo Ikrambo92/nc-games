@@ -1,7 +1,6 @@
 import { fetchReviews } from "../API"
 import { useState, useEffect } from "react"
 
-
 const ReviewsList = () => {
 
     const [reviews, setReviews] = useState([])
@@ -10,14 +9,12 @@ const ReviewsList = () => {
         fetchReviews().then((res) => {
             setReviews(res)
         })
-
     }, [])
 
-
     return (
-        <div className="review-container">
+        <div className="container">
             <h1>Reviews</h1>
-            <div className="review-list">
+            <div className="content-list">
                 <ul>
                     <div className="list">
                         {reviews.map((review) => {
