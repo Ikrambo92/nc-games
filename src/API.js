@@ -5,7 +5,7 @@ const apiUrl = axios.create({
 });
 
 export const fetchReviews = (category) => {
-    return apiUrl.get("/reviews", {params: {category}}).then((res) => {
+    return apiUrl.get("/reviews", { params: { category } }).then((res) => {
         return res.data.reviews;
     });
 };
@@ -15,3 +15,10 @@ export const fetchCategories = () => {
         return res.data.categories;
     });
 };
+
+export const fetchReviewById = (review_id) => {
+    return apiUrl.get(`/reviews/${review_id}`).then((res) => {
+        console.log(res.data.reviews)
+        return res.data.reviews;
+    });
+}

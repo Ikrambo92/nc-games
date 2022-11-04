@@ -1,6 +1,7 @@
 import { fetchCategories } from "../API";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 const CategoriesList = () => {
     const [categories, setCategories] = useState([]);
