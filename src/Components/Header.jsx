@@ -1,17 +1,19 @@
 import React from 'react'
 import '../App.css';
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
+import "../App.css";
+
 
 const header = () => {
     return (
         <div className="header">
-            <h1>NC Games</h1>
+            <h1><NavLink to="/" className="active-link">NC Games</NavLink></h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/account">Account</a>
-                <a href="/reviews">Reviews</a>
-                <a href="/categories">Categories</a>
-                <Link to="/comment">Comment</Link>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/account">Account</a></li>
+                    <li><Link to="/categories">Categories</Link></li>
+                </ul>
             </nav>
         </div>
     )
